@@ -388,12 +388,12 @@ function mousePressed() {
 
   if (d1 < 100) {
     location.reload();
-    location.href = "samesamebutdifferent-07.netlify.app";
+    location.href = "https://samesamebutdifferent-07.netlify.app";
   }
 
   if (d2 < 100) {
     location.reload();
-    location.href = "samesamebutdifferent-09.netlify.app";
+    location.href = "https://samesamebutdifferent-09.netlify.app";
   }
 
   if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < width / 15) {
