@@ -26,6 +26,7 @@ let moveX = 0;
 let direction;
 
 let myFont = [];
+let myFont2;
 
 let tilesXbg = 5;
 let tilesYbg = 8;
@@ -65,6 +66,7 @@ function preload() {
   txt = loadStrings("ssbd.txt");
 
   myFont = ["Noto Sans", "Noto Serif", "Noto Sans Mono"];
+  myFont2 = loadFont('NotoSansMono-ExtraBold.ttf');
 }
 
 function setup() {
@@ -149,7 +151,7 @@ function draw() {
   fill(225);
   textSize(18);
   textAlign(CENTER);
-  textFont("Noto Sans Mono");
+  textFont(myFont2);
   text("< refresh >", 0, 0);
   pop();
 
@@ -158,7 +160,7 @@ function draw() {
   fill(225);
   textSize(18);
   textAlign(LEFT);
-  textFont("Noto Sans Mono");
+  textFont(myFont2);
   text("< back >", 0, 0);
   pop();
 
@@ -167,16 +169,16 @@ function draw() {
   fill(225);
   textSize(18);
   textAlign(RIGHT);
-  textFont("Noto Sans Mono");
+  textFont(myFont2);
   text("< next >", 0, 0);
   pop();
   
   push();
   translate(width/2, height / 6);
-  fill(225, 65);
+  fill(225);
   textSize(18);
   textAlign(CENTER);
-  textFont("Noto Sans Mono");
+  textFont(myFont2);
   text('< click anywhere to play / pause >', 0,0)
   pop();
 }
@@ -297,7 +299,7 @@ function drawPattern(dis) {
   tileWtext = int(textDis.width / tilesXtext);
   tileHtext = int(textDis.height / tilesYtext);
 
-  let distortion = map(mouseX, 0, textDis.width, 0.05, 0.3);
+  let distortion = map(mouseX, 0, textDis.width, 0.05, 0.2);
 
   for (let y = 0; y < tilesYtext; y++) {
     for (let x = 0; x < tilesXtext; x++) {
@@ -343,7 +345,7 @@ function drawPattern(dis) {
       // pattern.ellipseMode(CORNER);
       pattern.rect(200 + spaceBio, leadingW, wordW / 0.7, 13);
 
-      pattern.fill(250, map(mouseY, 0, pattern.height, 100, 200));
+      pattern.fill(250, map(mouseY, 0, pattern.height, 100, 150));
       pattern.textFont(myFont[j + count]);
       pattern.textSize(15);
       pattern.text(bioDis2[j][i], bioX[i] + spaceBio + moveX, bioH[j + count]);
